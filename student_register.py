@@ -14,7 +14,7 @@ def get_int_input() -> str:
     try:
         student_count_int = int(student_count_str)
     except ValueError:
-        print(f"{"="*10}Error! {student_count_str} is not a valid integer. Please try again.{"="*10}")
+        print(f"{'='*10}Error! {student_count_str} is not a valid integer. Please try again.{'='*10}")
         return get_int_input()
     else: 
         return student_count_int
