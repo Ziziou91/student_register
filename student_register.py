@@ -5,8 +5,8 @@ def print_line(char="-", count=70) -> None:
     print(f"{char*count}")
 
 def bold_text(text: str) -> str:
-  """Returns a bolded string for printing."""
-  return "\033[1m" + text + "\033[0m"
+    """Returns a bolded string for printing."""
+    return "\033[1m" + text + "\033[0m"
 
 def get_int_input() -> str:
     """Takes a user input, ensure it can cast as an integer and then returns."""
@@ -16,7 +16,7 @@ def get_int_input() -> str:
     except ValueError:
         print(f"{'='*10}Error! {student_count_str} is not a valid integer. Please try again.{'='*10}")
         return get_int_input()
-    else: 
+    else:
         return student_count_int
 
 def write_string_to_file(file_name: str, user_string: str) -> None:
@@ -24,7 +24,7 @@ def write_string_to_file(file_name: str, user_string: str) -> None:
     try:
         file = open(file_name, "w", encoding="UTF-8")
     except FileNotFoundError:
-        print(f"error, {file_name} is an invalid path.")
+        print(f"{'='*10}Error! {file_name} is an invalid path.{'='*10}")
     else:
         with file:
             file.write(user_string)
@@ -33,10 +33,10 @@ def app() -> None:
     """Runs the logic for student_register"""
     file = "reg_form.txt"
     register= ""
-    print(f"{bold_text('\nHow many students are you registering for the exam venue?\n')}")
+    print(f"\n{bold_text('How many students are you registering for the exam venue?')}\n")
     my_int = get_int_input()
     for n in range(my_int):
-        register += f"{input("Enter a student ID number: ")} {'_'*20}\n"
+        register += f"{input('Enter a student ID number: ')} {'_'*20}\n"
     write_string_to_file(file, register)
 
 print_line(char="=")
