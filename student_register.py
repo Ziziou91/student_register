@@ -29,8 +29,12 @@ def write_string_to_file(file_name: str, user_string: str) -> None:
         with file:
             file.write(user_string)
     
-def app() -> None:
+def main() -> None:
     """Runs the logic for student_register"""
+    print_line(char="=")
+    print(f"{'*'*25}{bold_text('student_register.py')}{'*'*26}")
+    print_line(char="=")
+
     file = "reg_form.txt"
     register= ""
     print(f"\n{bold_text('How many students are you registering for the exam venue?')}\n")
@@ -39,12 +43,9 @@ def app() -> None:
         register += f"{input('Enter a student ID number: ')} {'_'*20}\n"
     write_string_to_file(file, register)
 
-print_line(char="=")
-print(f"{'*'*25}{bold_text('student_register.py')}{'*'*26}")
-print_line(char="=")
+    print_line(char="=")
+    print(f"{'*'*24}{bold_text('student_register.py END')}{'*'*23}")
+    print_line(char="=")
 
-app()
-
-print_line(char="=")
-print(f"{'*'*24}{bold_text('student_register.py END')}{'*'*23}")
-print_line(char="=")
+if __name__ == "__main__":
+    main()
